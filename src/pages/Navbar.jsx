@@ -4,6 +4,7 @@ import { auth, db } from '../firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { FaUserCircle } from 'react-icons/fa';
 import { doc, getDoc } from 'firebase/firestore';
+import logo from '../assets/logo.jpg';
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -48,9 +49,12 @@ const Navbar = () => {
   return (
     <nav className="bg-black text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-3xl font-bold">
-          MentorConnect
+       <Link to="/">
+        <img src={logo} alt="" width="250px" height="160px" />
         </Link>
+        {/* <Link to="/" className="text-3xl font-bold">
+          MentorConnect
+        </Link> */}
         <div className="hidden md:flex space-x-6 text-xl font-medium">
           {/* Common link for all users */}
           <Link to="/" className="hover:text-gray-400 hover:scale-105 transition duration-300 pt-1">
